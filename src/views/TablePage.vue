@@ -79,7 +79,7 @@
                 <!-- Filter button -->
                 <button
                   @click="openFilterModal"
-                  class="px-4 h-12 bg-blue-100 text-blue-600 rounded-md  border hover:bg-blue-200 focus:outline-none flex items-center"
+                  class="px-4 h-12 bg-blue-100 text-blue-600 rounded-md border hover:bg-blue-200 focus:outline-none flex items-center"
                 >
                   <img
                     class="mx-3"
@@ -312,19 +312,20 @@
 
         <hr class="my-5" />
         <!-- Filter button -->
-        <div  class="flex items-center justify-end">
+        <div class="flex items-center justify-end">
           <button
             @click="clearFilterModal"
-            class="flex mr-4 items-center border border-gray-200 text-gray-400 py-2 px-4 rounded-md  p-2"
+            class="flex mr-4 items-center border border-gray-200 text-gray-400 py-2 px-4 rounded-md p-2"
           >
-           <img src="../assets/icons8-broom 1.svg" class="mr-2" alt="eye"> Tozalash
+            <img src="../assets/icons8-broom1.svg" class="mr-2" alt="eye" />
+            Tozalash
           </button>
           <button
             @click="applyFilterModal"
             class="flex mr-4 bg-blue-500 text-white py-2 px-4 rounded-md p-2"
           >
-          <img src="../assets/eye2.svg" class="mr-2" alt="eye">
-          Natijalarni ko‘rish
+            <img src="../assets/eye2.svg" class="mr-2" alt="eye" />
+            Natijalarni ko‘rish
           </button>
         </div>
       </div>

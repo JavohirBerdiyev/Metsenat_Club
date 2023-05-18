@@ -1,0 +1,10 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+  font-family: 'Rubik', sans-serif !important;
+}
+body {
+  background-color: #F5F5F7;
+}

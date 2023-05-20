@@ -2,9 +2,6 @@
   <div class="min-h-screen flex flex-col items-center justify-center">
     <div class="max-w-md w-full p-6">
       <h1 class="text-3xl font-bold mb-6"><img src="../assets/logo-group.svg" class="w-full p-6" alt="logo"></h1>
-      <div class="mb-6">
-       
-      </div>
       <form @submit="login" class="bg-white p-8 rounded-lg">
         <h1 class="text-3xl text-gray-700 font-bold mb-7">Kirish</h1>
         <div class="mb-5">
@@ -50,7 +47,7 @@ export default {
         // Store the user in the auth store
         authStore.setUser(response.data.user);
         // Close the login page and go to the table page
-        this.$router.replace('/table');
+        this.$router.replace('/home');
       } catch (error) {
         console.error(error);
         // Handle login error

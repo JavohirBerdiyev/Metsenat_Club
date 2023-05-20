@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import TablePage from "../views/TablePage.vue";
+import HomePage from "../views/HomePage.vue";
 import LoginPage from "../views/LoginPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -13,9 +13,9 @@ const routes: Array<RouteRecordRaw> = [
     component: LoginPage,
   },
   {
-    path: "/table",
-    name: "Table",
-    component: TablePage,
+    path: "/home",
+    name: "Home",
+    component: HomePage,
   },
 ];
 

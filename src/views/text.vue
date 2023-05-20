@@ -1,6 +1,7 @@
 <template>
   <div>
     <!-- Header section -->
+    
     <header>
       <nav class="bg-white">
         <div
@@ -197,7 +198,7 @@
                 :disabled="currentPage === 1"
                 @click="prevPage"
                 href="#"
-                :aria-current="{ page: currentPage === page }"
+                :aria-current="currentPage === page ? 'page' : undefined"
                 class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
                 >{{ page }}</a
               >
@@ -228,6 +229,7 @@
         </nav>
       </div>
     </div>
+    <Header />
 
     <!-- Filter Modal -->
     <div
@@ -337,17 +339,16 @@
   </div>
 </template>
 
-<script>
-import { useRouter } from "vue-router";
+<script lang="ts">
 import { useAuthStore } from "../store";
 import axios from "axios";
-const router = useRouter();
+import { Sponsor } from '../hooks/Sponsor.ts';
 
 export default {
-  name: "TablePage",
+  name: "HomePage",
   data() {
     return {
-      entries: [],
+      entries: [] as Sponsor[],
       pageSize: 10,
       currentPage: 1,
       searchQuery: "",
@@ -418,7 +419,7 @@ export default {
         }
 
         if (this.selectedDate) {
-          const entryDate = new Date(entry.date);
+          const entryDate = new Date(entry.created_at);
           const selectedDate = new Date(this.selectedDate);
           matchesDate =
             entryDate.toDateString() === selectedDate.toDateString();
@@ -449,20 +450,20 @@ export default {
       this.currentPage++;
     },
 
-    goToPage(page) {
+    goToPage(page: any) {
       this.currentPage = page;
     },
     logout() {
       this.$router.push("/login"); // Redirect
     },
 
-    formatCreatedAt(dateString) {
+    formatCreatedAt(dateString: string) {
       const date = new Date(dateString);
-      const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+      const options: any = { day: "2-digit", month: "2-digit", year: "numeric" };
       return date.toLocaleDateString("en-US", options);
     },
 
-    getClassNames(status) {
+    getClassNames(status: string) {
       if (status == "Yangi") {
         return "text-blue-400";
       } else if (status == "Moderatsiyada") {

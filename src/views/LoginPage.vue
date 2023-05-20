@@ -18,24 +18,24 @@
     </div>
   </div>
 </template>
-
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import { useAuthStore } from '../store';
 import axios from 'axios';
 
-export default {
+export default defineComponent({
   name: 'LoginPage',
   data() {
     return {
       username: '',
       password: '',
       showAlert: false,
-      alertType: '',
+      alertType: '' as 'error' | 'success',
       alertMessage: '',
     };
   },
   methods: {
-    async login(event) {
+    async login(event: Event) {
       event.preventDefault();
       const authStore = useAuthStore();
       try {
@@ -57,7 +57,7 @@ export default {
       }
     },
   },
-};
+});
 </script>
 
 <style>

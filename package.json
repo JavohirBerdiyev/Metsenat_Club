@@ -11,7 +11,7 @@
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
     "axios": "^1.4.0",
-    "pinia": "^2.1.1",
+    "pinia": "^2.1.3",
     "typeface-rubik": "^1.1.13",
     "vue": "^3.2.47",
     "vue-recaptcha": "^3.0.0-alpha.5",

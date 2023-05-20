@@ -65,7 +65,7 @@
                   :value="searchQuery"
                   @input="$emit('update-search-query', $event.target.value)"
                 />
-                
+
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                   <img src="../assets/search.svg" alt="Flowbite Logo" />
                 </div>
@@ -75,7 +75,6 @@
                 @click="$emit('open-filter-modal')"
                 class="px-4 h-12 bg-blue-100 text-blue-600 rounded-md border hover:bg-blue-200 focus:outline-none flex items-center"
               >
-              
                 <img
                   class="mx-3"
                   src="../assets/Vector.svg"
@@ -96,17 +95,27 @@
 <script>
 // Import required dependencies
 import { ref } from "vue";
+import { useAuthStore } from "../store";
+import router from "../router";
 
 export default {
   name: "Header",
   props: ["searchQuery"],
   emits: ["update-search-query"],
   setup(props, { emit }) {
+    const authStore = useAuthStore();
+
+    const logout = () => {
+      authStore.setToken(""); // Clear the token
+      router.push("/login"); // Navigate to the login page
+    };
+
     const clearSearchQuery = () => {
       emit("update-search-query", "");
     };
 
     return {
+      logout,
       clearSearchQuery,
     };
   },

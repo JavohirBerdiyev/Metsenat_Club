@@ -102,7 +102,6 @@
       </div>
     </transition>
   </div>
-  <button @click="open">Open</button>
 </template>
 
 <script>

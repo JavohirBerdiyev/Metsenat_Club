@@ -8,3 +8,67 @@
 body {
   background-color: #F5F5F7;
 }
+
+.table {
+  border-spacing: 0 15px;
+}
+
+i {
+  font-size: 1rem !important;
+}
+
+user-btn {
+  background: #00009c;
+}
+.fullname {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+  color: #1d1d1fda;
+}
+tr th {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1.125px;
+  text-transform: uppercase;
+  color: #b1b1b8;
+}
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+.filtercontent {
+  position: relative;
+  z-index: 10;
+  width: 586px;
+}
+.UZS {
+  width: 24px;
+  height: 20px;
+
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  /* identical to box height, or 167% */
+
+  text-transform: uppercase;
+
+  color: #2e5bff;
+}
+
+.all {
+  text-transform: none !important;
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  letter-spacing: 0 !important;
+  color: #2e384d;
+}

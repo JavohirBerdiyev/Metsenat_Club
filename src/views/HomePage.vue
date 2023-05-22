@@ -36,7 +36,7 @@ import FilterModal from "../components/FilterModal.vue";
 import Header from "../components/Header.vue";
 import ContentSection from "../components/ContentSection.vue";
 import axios from "axios";
-import { Sponsor } from "../hooks/SponsorInterface.ts";
+import { Sponsor } from "../hooks/Sponsor";
 
 export default defineComponent({
   name: "HomePage",

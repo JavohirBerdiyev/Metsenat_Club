@@ -5,3 +5,13 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
 })
+
+const Dotenv = require('dotenv-webpack');
+
+module.exports = {
+  configureWebpack: {
+    plugins: [
+      new Dotenv()
+    ]
+  }
+};

@@ -18,29 +18,29 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue';
+
+<script>
 import { useAuthStore } from '../store';
 import axios from 'axios';
 
-export default defineComponent({
+export default {
   name: 'LoginPage',
   data() {
     return {
       username: '',
       password: '',
       showAlert: false,
-      alertType: '' as 'error' | 'success',
+      alertType: '',
       alertMessage: '',
     };
   },
   methods: {
-    async login(event: Event) {
+    async login(event) {
       event.preventDefault();
       const authStore = useAuthStore();
       try {
         // Call the login API endpoint
-        const response = await axios.post('https://club.metsenat.uz/api/v1/auth/login/', {
+        const response = await axios.post(`${process.env.VUE_APP_API_BASE_URL}/auth/login/`, {
           username: this.username,
           password: this.password,
         });
@@ -57,7 +57,7 @@ export default defineComponent({
       }
     },
   },
-});
+};
 </script>
 
 <style>
